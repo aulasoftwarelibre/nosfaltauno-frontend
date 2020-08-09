@@ -1,7 +1,13 @@
-import '../styles/globals.css'
+import { Provider as BumbagProvider } from 'bumbag';
+import NextApp from 'next/app';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+export default class App extends NextApp {
+  render() {
+    const { Component, pageProps } = this.props;
+    return (
+      <BumbagProvider isSSR collapseBelow="desktop">
+        <Component {...pageProps} />
+      </BumbagProvider>
+    );
+  }
 }
-
-export default MyApp
