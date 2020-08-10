@@ -2,6 +2,8 @@
   "name": "nosfaltauno-frontend",
   "version": "0.1.0",
   "private": true,
+  "author": "Aula de Software Libre <aulasoftwarelibre@uco.es",
+  "license": "agpl-3.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
