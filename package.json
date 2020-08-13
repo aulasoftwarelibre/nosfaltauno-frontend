@@ -9,11 +9,14 @@
     "build": "next build",
     "start": "next start",
     "storybook": "start-storybook -p 6006 -s ./public",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test": "jest"
   },
   "dependencies": {
+    "@types/faker": "^4.1.12",
     "bumbag": "^1.0.9",
     "bumbag-server": "^1.0.8",
+    "faker": "^4.1.0",
     "next": "9.5.2",
     "react": "16.13.1",
     "react-dom": "16.13.1"
@@ -27,11 +30,17 @@
     "@storybook/addons": "5.3.19",
     "@storybook/preset-typescript": "3.0.0",
     "@storybook/react": "5.3.19",
+    "@testing-library/jest-dom": "^5.11.3",
+    "@testing-library/react": "^10.4.8",
     "@types/node": "^14.0.27",
     "@types/react": "^16.9.45",
     "@types/react-dom": "^16.9.8",
     "babel-loader": "^8.0.5",
     "http-proxy-middleware": "^1.0.5",
+    "jest": "^26.4.0",
+    "jsdom": "^16.4.0",
+    "jsdom-global": "^3.0.2",
+    "ts-jest": "^26.2.0",
     "typescript": "^3.9.7"
   }
 }
