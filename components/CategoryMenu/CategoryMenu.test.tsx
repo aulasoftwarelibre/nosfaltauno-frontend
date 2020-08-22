@@ -1,29 +1,29 @@
-import React from 'react';
-import faker from 'faker';
-import { render, fireEvent } from '@testing-library/react';
-import { CategoryMenu } from './CategoryMenu';
+import React from "react";
+import faker from "faker";
+import { render, fireEvent } from "@testing-library/react";
+import { CategoryMenu } from "./CategoryMenu";
 
-describe('CategoryMenu component', () => {
+describe("CategoryMenu component", () => {
   const defaultProps = {
     categories: [],
-    activities: []
+    activities: [],
   };
 
-  it('shows the list of categories', () => {
+  it("shows the list of categories", () => {
     const props = {
       ...defaultProps,
-      categories: generateCategories(3)
+      categories: generateCategories(3),
     };
 
     const { getByText } = render(<CategoryMenu {...props} />);
 
-    props.categories.forEach(category => getByText(category.title));
+    props.categories.forEach((category) => getByText(category.title));
   });
 
-  it('shows the subcategories of a category when the user clicks over a category', () => {
+  it("shows the subcategories of a category when the user clicks over a category", () => {
     const props = {
       ...defaultProps,
-      categories: generateCategories(3, 2)
+      categories: generateCategories(3, 2),
     };
 
     const { getByText } = render(<CategoryMenu {...props} />);
@@ -31,7 +31,9 @@ describe('CategoryMenu component', () => {
     const secondCategory = getByText(props.categories[2].title);
     fireEvent.click(secondCategory);
 
-    props.categories[2].subcategories.forEach(category => getByText(category.title));
+    props.categories[2].subcategories.forEach((category) =>
+      getByText(category.title)
+    );
   });
 });
 
@@ -39,10 +41,17 @@ function aCategory(subcategories: Array<any> = []) {
   return {
     id: faker.random.uuid(),
     title: faker.random.word(),
-    subcategories
-  }
+    subcategories,
+  };
 }
 
-function generateCategories(numberOfCategories: number, numberOfSubcategories?: number) {
-  return new Array(numberOfCategories).fill(null).map(() => aCategory(new Array(numberOfSubcategories).fill(null).map(aCategory)));
+function generateCategories(
+  numberOfCategories: number,
+  numberOfSubcategories?: number
+) {
+  return new Array(numberOfCategories)
+    .fill(null)
+    .map(() =>
+      aCategory(new Array(numberOfSubcategories).fill(null).map(aCategory))
+    );
 }
