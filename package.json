@@ -8,7 +8,8 @@
     "next": "latest",
     "prop-types": "latest",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "storybook": "^6.0.21"
   },
   "scripts": {
     "dev": "next",
@@ -17,10 +18,16 @@
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write \"**/*.{js,ts,tsx}\"",
     "lint": "eslint . --ext ts --ext tsx --ext js",
-    "test": "jest",
-    "test-all": "yarn lint && yarn type-check && yarn test"
+    "test-all": "yarn lint && yarn type-check && yarn test",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.5",
+    "@storybook/addon-actions": "^6.0.21",
+    "@storybook/addon-essentials": "^6.0.21",
+    "@storybook/addon-links": "^6.0.21",
+    "@storybook/react": "^6.0.21",
     "@testing-library/react": "^10.0.1",
     "@types/jest": "^25.1.4",
     "@types/node": "^13.9.5",
@@ -28,6 +35,7 @@
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.25.0",
     "babel-jest": "^25.2.3",
+    "babel-loader": "^8.1.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-react": "^7.19.0",
@@ -36,6 +44,7 @@
     "jest-watch-typeahead": "^0.5.0",
     "lint-staged": "^10.0.10",
     "prettier": "^2.0.2",
+    "react-is": "^16.13.1",
     "typescript": "^3.8.3"
   }
 }
